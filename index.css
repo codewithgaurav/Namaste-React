@@ -1,0 +1,15 @@
+#heading {
+    color: rgb(50, 11, 204);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#heading2 {
+    color:rgb(11, 204, 82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

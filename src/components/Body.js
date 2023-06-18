@@ -1,7 +1,8 @@
 import React from 'react'
-import ResCard from './ResCard';
 import { useState, useEffect } from 'react';
-import Shimmer from './Shimmer'
+import ResCard from './ResCard';
+import Shimmer from "./Shimmer"
+
 
 const Body = () => {
     // Local State variable - Super powerful varialbe
@@ -20,10 +21,12 @@ const Body = () => {
     }
 
     // Conditional Rendering - Rendering on the basis of conditions.
-    return listOfRestaurant.length === 0 ? <Shimmer /> : (
+    return (
         <div className="body">
             <div className="searchBox">
-                <input className="search" type="text" placeholder="Search" value={searchText} />
+                <input className="search" type="text" placeholder="Search" value={searchText}
+                    onChange={(e) => { setSearchText(e.target.value) }}
+                />
                 <button className="button" onClick={() => {
                     // Filter the restaurant card and update the UI
                     // Search Text
@@ -49,3 +52,4 @@ const Body = () => {
 };
 
 export default Body;
+

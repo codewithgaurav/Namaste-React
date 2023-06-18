@@ -15,3 +15,14 @@ const AppLayout = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />);
+
+function x() {
+    let a = 10;
+    function y() {
+        console.log(a);
+    }
+    a = 100;
+    y();
+}
+
+console.log(x());

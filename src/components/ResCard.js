@@ -4,15 +4,16 @@ import { CDN_URL } from '../utils/contents';
 const ResCard = (props) => {
     const { resData } = props;
 
-    const { cloudinaryImageId, name, cuisines, avgRating, slaString, costForTwoString } = resData?.data;
+    const { cloudinaryImageId, name, cuisines, avgRating, slaString, costForTwo, areaName } = resData;
+
     return (
         <div className="resCard">
             <img className="resLogo" src={CDN_URL + cloudinaryImageId} />
-            <h4>{name}</h4>
+            <h4>{name} - {areaName}</h4>
             <h5>{cuisines.join(", ")}</h5>
             <h5>★ {avgRating} Stars</h5>
             <h5>{slaString}</h5>
-            <h5>{costForTwoString}</h5>
+            <h5>{costForTwo}</h5>
         </div>
     )
 }

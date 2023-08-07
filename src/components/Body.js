@@ -4,6 +4,7 @@ import ResCard from './ResCard';
 import Shimmer from "./Shimmer"
 import { SWIGGY_API } from '../utils/contents';
 
+
 const Body = () => {
     /* Local State variable - Super powerful varialbe
                 ⬇                   ⬇           */

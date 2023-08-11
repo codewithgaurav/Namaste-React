@@ -1,72 +1,11 @@
-/* #heading {
-    color: rgb(50, 11, 204);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
- */
-
 * {
   font-family: "Work Sans", sans-serif;
 }
 
-.header {
-  margin-left: 100px;
-  width: 1500;
-  display: flex;
-  justify-content: space-between;
-  background-image: url("https://www.shutterstock.com/image-photo/summer-bbq-food-corner-border-260nw-1765546103.jpg");
-  color: white;
-  font-weight: bold;
-}
-
-.logo {
-  width: 150px;
-  height: 175px;
-  object-fit: cover;
-  border-radius: 200px;
-}
-.logo:hover {
-  cursor: pointer;
-}
-
-.login-btn {
-  height: 28px;
-  width: 80px;
-  margin-right: 20px;
-  margin-top: 20px;
-  font-weight: bold;
-  border-radius: 25px;
-}
-
-.login-btn:hover {
-  cursor: pointer;
-}
-
 .body {
   padding-top: 20px;
+  justify-content: space-between;
 }
-
-.navItems {
-  padding: 0px, 0px;
-}
-
-.navItems > ul {
-  display: flex;
-  list-style: none;
-  font-size: 25px;
-}
-
-.navItems > ul > li {
-  padding: 10px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-/* .navItems > ul > li:hover {
-  cursor: pointer;
-} */
 
 .search-box {
   margin-top: 30px;
@@ -119,6 +58,12 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.resCard p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .resLogo {
   width: 100%;
   height: auto;
@@ -153,29 +98,38 @@
   background-color: #f5f5f5;
 }
 
-.contact-page {
+/* .contact-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 30vh;
-}
+} */
 
-.about-page {
+/* .about-page {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 77vh;
   background: #f5f5dc;
-}
+} */
 
 .user-class {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.avatar_img {
+  border-radius: 100%;
+  max-width: 80%;
+  max-height: 80%;
 }
 
 .counter {
+  font-weight: bold;
+  text-align: center;
   margin-left: 150px;
   justify-content: center;
   align-items: flex;
@@ -224,7 +178,7 @@
   border: 2px solid black;
   border-radius: 30px;
   width: 250px;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 1px 5px #f9f9f9;
   background: #ffe4e1;
 }

@@ -9,13 +9,13 @@ const ResCard = (props) => {
     return (
         <div className="resCard">
             <img className="resLogo" src={CDN_URL + cloudinaryImageId} />
-            <h4>{name} - {areaName}</h4>
-            <h5>{cuisines.join(", ")}</h5>
+            <h4><p>{name} - {areaName}</p></h4>
+            <h5><p>{cuisines.join(", ")}</p></h5>
             <h5>★ {avgRating} Stars</h5>
             <h5>{slaString}</h5>
             <h5>{costForTwo}</h5>
         </div>
-    )
-}
+    );
+};
 
 export default ResCard;

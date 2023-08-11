@@ -1,0 +1,12 @@
+.contact-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

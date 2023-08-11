@@ -1,0 +1,30 @@
+/* .about-page {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f5f5dc;
+  width: 100%;
+  height: 60vh;
+  margin-top: 40px;
+} */
+
+.about-page {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 76.8vh;
+  background-color: #f5f5dc;
+  overflow: hidden;
+}
+
+.about-wrapper {
+  padding-bottom: 50px;
+}
+
+/* .about-class-comp {
+    margin
+} */

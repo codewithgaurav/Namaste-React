@@ -1,0 +1,57 @@
+.header {
+  border: 2px solid black;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  /* background-image: url("https://www.shutterstock.com/image-photo/summer-bbq-food-corner-border-260nw-1765546103.jpg"); */
+  font-weight: bold;
+  border-radius: 30px;
+  background: linear-gradient(
+    111.1deg,
+    rgb(0, 40, 70) -4.8%,
+    rgb(255, 115, 115) 82.7%,
+    rgb(255, 175, 123) 97.2%
+  );
+}
+
+.logo {
+  width: 150px;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 200px;
+}
+.logo:hover {
+  cursor: pointer;
+}
+
+.navItems > ul {
+  display: flex;
+  list-style: none;
+  font-size: 25px;
+}
+
+.navItems > ul > li {
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.navItems ul li a {
+  transition: all 0.3s ease 0;
+}
+
+.navItems ul li a:hover {
+  color: #ffffff;
+}
+
+.login-btn {
+  height: 28px;
+  width: 80px;
+  margin-right: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  border-radius: 25px;
+  background-color: rgba(0, 136, 169, 1);
+  cursor: pointer;
+  transition: all 0.3s ease 0;
+}

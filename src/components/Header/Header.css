@@ -1,11 +1,8 @@
-.header {
-  border: 2px solid black;
+/* .header {
   align-items: center;
   display: flex;
   justify-content: space-around;
-  /* background-image: url("https://www.shutterstock.com/image-photo/summer-bbq-food-corner-border-260nw-1765546103.jpg"); */
-  font-weight: bold;
-  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: linear-gradient(
     111.1deg,
     rgb(0, 40, 70) -4.8%,
@@ -19,8 +16,6 @@
   height: 175px;
   object-fit: cover;
   border-radius: 200px;
-}
-.logo:hover {
   cursor: pointer;
 }
 
@@ -54,4 +49,4 @@
   background-color: rgba(0, 136, 169, 1);
   cursor: pointer;
   transition: all 0.3s ease 0;
-}
+} */

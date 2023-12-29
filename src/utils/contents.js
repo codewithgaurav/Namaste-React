@@ -8,5 +8,5 @@ export const MENU_LOGO_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_
 
 export const MENU_API_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.4421257&lng=77.0652025&restaurantId="
 
-export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4421257&lng=77.0652025&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4000722&lng=77.0449737&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 // Named exports

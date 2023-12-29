@@ -1,22 +1,52 @@
-import React from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./components/Body";
-import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Error from "./components/Error";
 import ResMenu from "./components/ResMenu";
-import Grocery from "./components/Grocery/Grocery";
 import Cart from "./components/Cart/Cart";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
+import appStore from "./utils/appStore";
+import { Provider } from "react-redux";
 
+
+/*                          ⬆
+import in lazy function is not normal import that we use to import components,
+rather it is a function which takes the path of the component.
+
+Following are the same concepts as lazy loading but with different names:
+- Chunking
+- Code Splitting
+- Dynamic Loading
+- On Demand Loading
+- Dynamic Import
+*/
+
+const Grocery = lazy(() => import("./components/Grocery/Grocery"));
+const About = lazy(() => import("./components/About/About"));
 
 const AppLayout = () => {
+
+    const [userName, setUserName] = useState();
+
+    useEffect(() => {
+        const data = {
+            name: "Gaurav Sharma"
+        }
+        setUserName(data.name);
+    }, [])
     return (
-        <div className="app">
-            <Header />
-            <Outlet />
-        </div>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                <div className="app ">
+                    <Header />
+                    <Outlet />
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 }
 
@@ -31,7 +61,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />
+                element: <Suspense fallback={Shimmer}><About /></Suspense>
             },
             {
                 path: "/contact",
@@ -39,7 +69,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/grocery",
-                element: <Grocery />
+                element: <Suspense fallback={Shimmer}><Grocery /></Suspense>
             },
             {
                 path: "/cart",
@@ -58,10 +88,3 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
 
-const arr = [1, 2, 3];
-let result = 0;
-for (const value in arr) {
-    result += value;
-}
-
-console.log(result);

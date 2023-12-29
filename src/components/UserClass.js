@@ -13,13 +13,21 @@ class UserClass extends React.Component {
         };
     };
 
+
     async componentDidMount() {
-        const data = await fetch("https://api.github.com/users/codewithgaurav");
-        const json = await data.json();
-        // console.log(json);
-        this.setState({
-            userInfo: json
-        })
+        try {
+            const data = await fetch("https://api.github.com/users/codewithgaurav");
+            const json = await data.json();
+            // console.log(json);
+            this.setState({
+                userInfo: json
+            })
+        } catch (error) {
+            alert("Oops! We think an error occured");
+            console.log(error);
+            handle(error);
+        }
+
     }
     render() {
         const { contact, linkedin } = this.props;
@@ -34,25 +42,23 @@ class UserClass extends React.Component {
 
         /* target="_blank" opens the link in a new tab in lines 45 and 46*/
         return (
-            <div className="user-class" >
-                <div className="avatar">
-                    <img className="avatar_img" src={avatar_url} alt="" />
+            <div className="user-class flex justify-around align-center overflow-y-hidden" >
+                <div className="avatar  ">
+                    <img className="avatar_img rounded-full max-w-[80%] max-h-[80%] " src={avatar_url} alt="avatar" />
                 </div>
-                <div className="user-card">
+                <div className="user-card border border-[2px solid black] rounded-3xl p-5  bg-[#ffe4e1] h-auto hover:shadow-xl shadow-[0 1px 5px #f9f9f9] duration-300 ">
                     <h3>Meet Our Team</h3>
+                    <br />
                     <h4>{name}</h4>
+                    <br />
                     <h5>Location: {location}</h5>
-                    <h5><span>Contact:{" "}<a href={html_url} target="_blank">{contact}</a></span></h5>
-                    <h5><span>LinkedIn:{" "}<a href={blog} target="_blank">{linkedin}</a></span></h5>
-                </div >
-                <div className="counter">
-                    Counter App
-                    <div className="count">{count}</div>
-                    <button className="incre-btn" onClick={() => this.setState({ count: this.state.count + 1 })}>Increment</button>
-                    <button className="reset-btn" onClick={() => this.setState({ count: this.state.count = 0 })}>Reset</button>
-                    <button className="decre-btn" onClick={(handleClick)} disabled={count === 0}>Decrement</button>
+                    <br />
+                    <h5><span>Contact:{" "}<a href={html_url} target="_blank" style={{ color: "blue" }}>{contact}</a></span></h5>
+                    <br />
+                    <h5><span>LinkedIn:{" "}<a href={blog} target="_blank" style={{ color: "blue" }}>{linkedin}</a></span></h5>
+                    <br />
 
-                </div>
+                </div >
             </div >
         );
     };
